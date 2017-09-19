@@ -1,0 +1,6 @@
+{
+  "name": "ProjectBox",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./ProjectBox.js"
+}

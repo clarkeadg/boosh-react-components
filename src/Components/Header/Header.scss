@@ -1,0 +1,57 @@
+
+header {  
+  height: 55px;
+  width: 100%;
+  background: #000;
+  padding: 0 1.5em;
+  text-align: left;
+
+  a.logo {
+    display: inline-block;
+    img {
+      height: 42px;
+      width: auto;
+      margin-top: 4px;
+    }
+  }
+
+  .menu {
+    a {
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-size: 0.85em;
+      font-weight: bold;
+      line-height: 1.75em;
+      margin: 0 0.75em;
+      padding: 0;
+
+      &.active {
+        color: #fff;
+        border-bottom: 1px solid #fff;
+      }
+
+      &.button {
+        padding: 0.25em 1.5em;
+
+        &.active {
+          border-bottom: 0;
+        }
+      }
+    }
+  }
+
+  .header-nav {
+    float: right;
+    position: relative;
+    top: 0.85em;
+  }
+
+}
+
+@media (max-width: 1024px) {
+  header {
+    text-align: center;
+  }
+}
+

@@ -1,0 +1,17 @@
+
+.top-nav {
+  background: #262626;
+  color: #fff;
+
+  .menu.left {
+  }
+  .menu.right {
+    float: right;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .top-nav {
+    .menu.left { display: none; }
+  }
+}

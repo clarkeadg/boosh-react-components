@@ -1,0 +1,26 @@
+
+.menu {
+  
+  a {
+    &.active {
+      color: #000;
+      font-weight: 600;
+      border-bottom: 0.1em solid #000;
+    }
+  }
+
+  &.vertical {
+
+    a {
+      border: 0.1em solid #eee;
+      margin-top:  -0.1em;
+
+      &.active {
+        color: #000;
+        font-weight: 600;
+        border-left: 0.1em solid #000;
+      }
+    }
+
+  }
+}

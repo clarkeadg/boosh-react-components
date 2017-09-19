@@ -1,0 +1,58 @@
+
+.portlet {
+  display: block;
+  padding: 0.5em;
+}
+
+.portlet-title {
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 0.5em;
+}
+
+.portlet-cont {
+  background: #fff;
+  padding: 1em;
+  box-shadow: 0.1em 0.2em 0.2em 0 #ccc;
+}
+
+.portlet-items {
+  background: #fff;
+  box-shadow: 0.1em 0.2em 0.2em 0 #ccc;
+  padding: 1em;
+}
+
+.portlet.portlet-nopad {
+  .portlet-items {
+    padding: 0;
+  }
+}
+
+.portlet.portlet-stretch {
+  height: 100%;
+  .portlet-items {
+    height: 100%;
+  }
+}
+
+.portlet.portlet-clear {
+  padding: 0 0.5em;
+}
+
+.portlet.portlet-clear > .portlet-cont {
+  box-shadow: none; background: none;
+  padding: 0;
+}
+
+.portlet.portlet-clear > .portlet-items {
+  box-shadow: none; background: none;
+  padding: 0;
+}
+
+.portlet.portlet-grey {
+  .portlet-items {
+    background: #f8f8f8;
+    border-top: 1px solid #d4d4d4;
+  }
+}
+

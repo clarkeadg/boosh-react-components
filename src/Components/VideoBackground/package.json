@@ -1,0 +1,6 @@
+{
+  "name": "VideoBackground",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./VideoBackground.js"
+}

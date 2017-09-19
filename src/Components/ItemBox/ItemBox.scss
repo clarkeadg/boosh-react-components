@@ -1,0 +1,27 @@
+
+.itembox {
+  padding: 1em 1em 1em 7em;
+  position: relative;
+  border-bottom: 0.1em solid #eee;
+  min-height: 7em;
+}
+
+.itembox:last-child {
+  border-bottom: 0;
+}
+
+.itembox img {
+  position: absolute;
+  top: 1em;
+  left: 1em;
+  width: 4em;
+}
+
+.itembox-title {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.itembox-copy {
+
+}
