@@ -22,7 +22,7 @@ class VideoBackground extends React.Component {
   render() {
 
     let { video }  = this.props
-    if (!video) video = "//cdn.boosh.io/topmusicvideos/videos/" + videos[Math.floor(Math.random()*videos.length)];
+    if (!video) video = "//cdn.boosh.io/videos/" + videos[Math.floor(Math.random()*videos.length)];
 
     return (
       <div className="video-background-wrapper">
