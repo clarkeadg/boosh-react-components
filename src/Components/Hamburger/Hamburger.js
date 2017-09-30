@@ -3,32 +3,74 @@
 import React from 'react';
 
 /* Components */
-import BurgerMenu from 'react-burger-menu';
 import Nav from '../Nav/Nav';
-
-// Pick an Animation
-//const HamburgerMenu = BurgerMenu.slide;
-const HamburgerMenu = BurgerMenu.stack;
-//const HamburgerMenu = BurgerMenu.elastic;
-//const HamburgerMenu = BurgerMenu.bubble;
-//const HamburgerMenu = BurgerMenu.push;
-//const HamburgerMenu = BurgerMenu.pushRotate;
-//const HamburgerMenu = BurgerMenu.scaleDown;
-//const HamburgerMenu = BurgerMenu.scaleRotate;
-//const HamburgerMenu = BurgerMenu.fallDown;
+import { Icon } from 'react-foundation';
 
 class Hamburger extends React.Component {
 
-  render() {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isOpen: false
+    }
+    this.toggleMenu = this.toggleMenu.bind(this);
+    this.closeMenu = this.closeMenu.bind(this);
+  }
+
+  toggleMenu() {
+    this.setState({ isOpen: !this.state.isOpen })
+  }
+
+  closeMenu() {
+    this.setState({ isOpen: false })
+  }
+
+  renderHambugerButton() {
+    if (!this.state.isOpen) {
+      return (
+        <div className="bm-burger-button">
+          <button onClick={this.toggleMenu}>
+            <Icon name="fi-list"/>
+          </button>
+        </div>
+      )
+    }
     return (
-      <div className="hamburger hide-for-large-x">
-        <HamburgerMenu isOpen={false} pageWrapId={"page-wrap"} outerContainerId={"outer-container"}>
-          <Nav items={this.props.nav_items}/>
-        </HamburgerMenu>
+      <div className="bm-burger-button">
+        <button onClick={this.toggleMenu}>
+          <Icon name="fi-x"/>
+        </button>
+      </div>
+    )
+  }
+
+  render() {
+    let { nav_items } = this.props
+
+    let active = this.state.isOpen ? 'active' : '';
+
+    return (
+      <div className={"hamburger "+active}>
+        <div className="bm-overlay"/>
+        <div className="bm-menu-wrap">
+          <div className="bm-menu" onClick={this.closeMenu}>
+             <nav className="bm-item-list">
+                <Nav items={nav_items}/>
+             </nav> 
+          </div> 
+        </div>
+        { this.renderHambugerButton() }       
       </div>
     );
   }
 }
 
-export default Hamburger;
+Hamburger.propTypes = {
+  nav_items: React.PropTypes.array
+}
 
+Hamburger.defaultProps = {
+  nav_items: []
+}
+
+export default Hamburger;

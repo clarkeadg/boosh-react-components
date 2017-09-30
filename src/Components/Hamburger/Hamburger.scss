@@ -14,20 +14,39 @@
 
       &.active {
         color: #fff;
-        border-bottom: 1px solid #fff;
       }
+    }
+  }
+  &.active {
+    .bm-menu-wrap {
+      transition: transform 0.4s cubic-bezier(0.7, 0, 0.3, 1);
+      transform: translate3d(0px, 0px, 0px);
     }
   }
 }
 
 /* Position and sizing of burger button */
 .bm-burger-button {
-  position: fixed;
+  position: absolute;
   z-index: 2 !important;
-  width: 24px;
-  height: 20px;
+  width: 1.5em;
+  height: 1em;
   left: 1em;
-  top: 0.75em;
+  top: 0.75em;  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  button {
+    color: #95aafa;
+    i {
+      margin: 0.1em 0 0 0;
+      cursor: pointer;
+      font-size: 1.5em;
+    }
+    &:hover {
+      color: #ffb100;
+    }
+  }
 }
 
 .bm-burger-button
@@ -44,8 +63,8 @@
 
 /* Position and sizing of clickable cross button */
 .bm-cross-button {
-  height: 24px;
-  width: 24px;
+  height: 1.5em;
+  width: 1em;
 }
 
 /* Color/shape of close button cross */
@@ -58,6 +77,9 @@
   background: #373a47;
   padding: 2.5em 1.5em 0;
   font-size: 1.15em;
+  height: 100%;
+  box-sizing: border-box;
+  overflow: auto;
 }
 
 /* Morph shape necessary with bubble or elastic */
@@ -69,14 +91,30 @@
 .bm-item-list {
   color: #b8b7ad;
   padding: 0.8em;
+  height: 100%;
 }
 
 .bm-menu-wrap {
   z-index: 3 !important;
+
+  position: fixed;
+  right: inherit;
+  z-index: 2; 
+  width: 300px;
+  height: 100%;
+  transition: transform 0.2s cubic-bezier(0.7, 0, 0.3, 1); 
+  transform: translate3d(-100%, 0px, 0px);  
 }
 
 /* Styling of overlay */
 .bm-overlay {
   z-index: 3 !important;
   background: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  opacity: 1;
+  transition: opacity 0.3s;
 }
