@@ -15,11 +15,9 @@ class Nav extends React.Component {
     if (item.dropdown) {
        return (
         <Dropdown ref="dropdown" >
-          <DropdownTrigger>              
-            <Link activeClassName={'active'} to={item.url}>
-              { item.icon ? <Icon name={item.icon}/> : '' }
-              { item.title }
-            </Link>
+          <DropdownTrigger> 
+            { item.icon ? <Icon name={item.icon}/> : '' }
+            { item.title }   
           </DropdownTrigger>
           <DropdownContent onClick={()=>{this.refs.dropdown.hide()}}>
             <Menu isVertical>
