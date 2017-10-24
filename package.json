@@ -1,6 +1,6 @@
 {
   "name": "boosh-react-components",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "engines": {
     "node": ">=6",
     "npm": ">=3.8"

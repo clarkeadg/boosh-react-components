@@ -14,21 +14,23 @@ class Nav extends React.Component {
 
     if (item.dropdown) {
        return (
-        <Dropdown ref="dropdown" onMouseEnter={()=>{ this.refs.dropdown.show() }} onMouseLeave={()=>{ this.refs.dropdown.hide() }}>
-          <DropdownTrigger> 
-            { item.icon ? <Icon name={item.icon}/> : '' }
-            { item.title }   
-          </DropdownTrigger>
-          <DropdownContent onClick={()=>{this.refs.dropdown.hide()}}>
-            <Menu isVertical>
-              {item.dropdown.map((dropDownItem, id)=>{
-                return (
-                  <MenuItem key={id}><Link to={dropDownItem.url}>{dropDownItem.title}</Link></MenuItem>
-                )
-              })}
-            </Menu>
-          </DropdownContent>
-        </Dropdown>
+        <div onMouseEnter={()=>{ this.refs.dropdown.show() }} onMouseLeave={()=>{ this.refs.dropdown.hide() }}>
+          <Dropdown ref="dropdown" >
+            <DropdownTrigger> 
+              { item.icon ? <Icon name={item.icon}/> : '' }
+              { item.title }   
+            </DropdownTrigger>
+            <DropdownContent onClick={()=>{this.refs.dropdown.hide()}}>
+              <Menu isVertical>
+                {item.dropdown.map((dropDownItem, id)=>{
+                  return (
+                    <MenuItem key={id}><Link to={dropDownItem.url}>{dropDownItem.title}</Link></MenuItem>
+                  )
+                })}
+              </Menu>
+            </DropdownContent>
+          </Dropdown>
+        </div>
       )      
     }
 
